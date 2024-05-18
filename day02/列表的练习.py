@@ -1,0 +1,14 @@
+"""
+通过代码研究对列表常用操作的练习
+"""
+my_list=[21,25,21,23,22,20]
+my_list.append(31)
+my_list2=[29,33,30]
+my_list.extend(my_list2)
+num=my_list[0]
+print(num)
+num2=my_list[len(my_list)-1]
+print(num2)
+print(my_list)
+index=my_list.index(31)
+print(index)
