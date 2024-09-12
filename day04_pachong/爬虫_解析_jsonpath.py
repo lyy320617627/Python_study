@@ -6,6 +6,7 @@ json中方法的讲解:
 loads：将json字符串解码为Python数据类型。它接收一个json字符串作为输入，并返回一个Python对象（通常是字典或者列表），该对象应用与JSON数据结构。
 dumps：方法将Python数据类型编码为JSON格式的字符串。它用于接收一个Python对象（通常是字典或者列表）作为1输入，
 并返回一个JSON字符串，该字符串表示了Python对象的结构。
+注意:jsonpath只能遍历json字符串
 
 """
 # loads:把json对象转换成基本的Python对象

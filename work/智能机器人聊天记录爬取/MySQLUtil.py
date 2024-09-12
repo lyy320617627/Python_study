@@ -8,7 +8,7 @@ class MySQLUtil:
     """
     MySQL工具类
     """
-    def __init__(self, host="127.0.0.1",port=3306,user=None, passwd=None, db=None, charset="utf8", *args, **kwargs):
+    def __init__(self, host="127.0.0.1",port=3306,user=None, passwd=None, db=None, charset="utf8mb4", *args, **kwargs):
         # print('对象的创建')
         # try:
         #     self.__host = host

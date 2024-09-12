@@ -23,6 +23,7 @@ def send_message(file_path1):
         data = {'appkey': appkey,
                 'appsecret': appsecret}
         r = requests.request('GET', url, data=data, headers=headers)
+        print(f"获取到的access_token:{r.json()["access_token"]}")
         access_token = r.json()["access_token"]
 
         return access_token
@@ -70,6 +71,20 @@ def send_message(file_path1):
         print('发送成功')
 
     SendFile()
-send_message(file_path1)
 
 
+if __name__ == '__main__':
+    # 从小程序应用信息处获取
+    appkey = 'dingc8wtmaib95vi3ifz'  # 不要配置服务器ip
+    appsecret = 'XR4vKpX7Wt4iLK2WE-1IbI_THLwaynDYC6Be0j0j9Fl3e_ev39P9WRu_Fin4GhFt'  # 不要配置服务器ip
+
+    url = 'https://oapi.dingtalk.com/gettoken?appkey=%s&appsecret=%s' % (appkey, appsecret)
+
+    headers = {
+        'Content-Type': "application/x-www-form-urlencoded"
+    }
+    data = {'appkey': appkey,
+            'appsecret': appsecret}
+    r = requests.request('GET', url, data=data, headers=headers)
+    print(f"获取到的access_token:{r.json()["access_token"]}")
+    access_token = r.json()["access_token"]

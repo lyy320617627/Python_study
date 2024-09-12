@@ -37,3 +37,11 @@ message="包装 环节 ，超4时未处理:4单5行14426台请及时处理"
 message=message[:2]
 print(len(message))
 print(message)
+item=[]
+print("----------------------------")
+for i in range(0,100):
+    for j in range(0,100):
+        print(f"j={j}")
+        if(j%10==0):
+            continue
+    print(i)

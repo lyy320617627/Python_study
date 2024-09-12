@@ -189,13 +189,14 @@ class MySQLUtil:
 
 
 if __name__== "__main__":
-    access_token='Bearer 599e482c-ac9a-45c8-a85d-e680c9b04e45'
+    access_token='Bearer c0298e52-70fa-468e-ac9f-7db7aa14fcc2'
     conn2 = MySQLUtil(host="192.168.0.148", port=3306, user="ZSD", passwd="Cmdc2023", db="zhelixing_data")
     url = 'https://api.yingdao.com/api/console/app/queryAppUseRecordList'
     headers = {
         'Authorization': access_token,
         'Content-Type': 'application/json'
     }
+
     data = conn2.select_all("yindao_program_base_info")
     data = list(data)
     program_list_takeTime = []
@@ -206,17 +207,26 @@ if __name__== "__main__":
         tel_num = row[4]
         start_time = row[7]
         end_time = row[8]
+        run_account=row[-1]
         data = {
             "page": 1,
-            "size": 1,
+            "size": 10,
             "appId": uuid
         }
         response = requests.post(url, headers=headers, json=data)
-        runstateName = (response.json()['data'][0]['runStatusName'])
-
-        if runstateName == "运行中":
-            row_list = [appName, tel_num, runstateName, start_time, end_time]
-            program_list.append(row_list)
+        print(response.json())
+        print(f"response.json():{response.json()}")
+        print(f"response.json()_type:{type(response.json())}")
+        response_list=response.json()['data']
+        for response_item in response_list:
+            runstateName = (response_item['runStatusName'])
+            username=response_item['userName']
+            if username !=run_account:
+                print(f"username:{username}跳过")
+                continue
+            if runstateName != "运行中":
+                row_list = [appName, tel_num, runstateName, start_time, end_time]
+                program_list.append(row_list)
         # else:
         #     conn2.insertOrUpdateFinishTime(str(appName))
     print(program_list)

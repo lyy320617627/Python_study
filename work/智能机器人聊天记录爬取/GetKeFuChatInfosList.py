@@ -5,6 +5,7 @@ import re
 from MySQLUtil import MySQLUtil
 
 
+
 def convert_to_str_if_not_empty(value):
     return str(value) if value else None
 class GetInfosList:
@@ -155,13 +156,13 @@ class GetInfosList:
 
 if __name__ == "__main__":
     # 发送 POST 请求并打印返回结果
-    authorization = "Bearer 2cc5221f-8229-4360-84df-84b8c7d03377"
+    authorization = "Bearer cd8ab41b-b2e4-4193-98c0-a1a1ec1669cf"
 
-    cookie='STSESSION=6388A7B8F77FC2FEB174E95C67EE84A0; SINOSESSION_ID_=87fe408070f44572a0e193e2153751cb; ha-wap-pas=c1b26a4764c38987; waparrayid=wapserv_ec_20230907_03; VALIDATE_ID=AUTH_SMS20240517MtCRZDsT02; tokenInfo=%7B%22access_token%22%3A%222cc5221f-8229-4360-84df-84b8c7d03377%22%2C%22scope%22%3A%22all%22%2C%22staff_id%22%3A%22znydadmin%22%2C%22token_type%22%3A%22bearer%22%2C%22expires_in%22%3A43199%2C%22targetUrl%22%3A%22https%3A//wap.zj.10086.cn/ai/shopkf/ucfront/index.html%22%2C%22client_id%22%3A%22ucfront%22%7D'
+    cookie='VALIDATE_ID=AUTH_SMS20240520MtCRZDsT02; tokenInfo=%7B%22access_token%22%3A%22cd8ab41b-b2e4-4193-98c0-a1a1ec1669cf%22%2C%22scope%22%3A%22all%22%2C%22staff_id%22%3A%22znydadmin%22%2C%22token_type%22%3A%22bearer%22%2C%22expires_in%22%3A43199%2C%22targetUrl%22%3A%22https%3A//wap.zj.10086.cn/ai/shopkf/ucfront/index.html%22%2C%22client_id%22%3A%22ucfront%22%7D'
     getInfoList=GetInfosList()
     tell_num_list=getInfoList.auto_insert(authorizaation=authorization,cookie=cookie)
-    print(len(tell_num_list))
     print(tell_num_list)
+    print(len(tell_num_list))
 
 
 
