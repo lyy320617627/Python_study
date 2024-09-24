@@ -1,0 +1,38 @@
+{
+  deliverState: 114,
+  orderState: 3,
+  dealerProvinceId: 330000,
+  mch: "浙江终端公司"
+  …
+}
+dealerName
+:
+"宁波捷加通讯设备有限公司"
+dealerNameList:
+[]
+dealerProvinceId: 330000
+deliverState: 114
+endTime: "2024-05-24 23:59:59"
+lctnProvinceId
+: "330000"
+mch: "浙江终端公司"
+mchtId: 10781
+orderState:
+3
+page: {pageNum: 1, pageSize: 100}
+pageNum: 1
+pageSize: 100
+startTime:
+"2024-04-24 00:00:00"
+userInfo: {cityId: "-1", id: 0, mchtId: 10781, mchtName: "浙江终端公司", mchtType: 1, opId: 30838, provinceId: -1, …}
+cityId: "-1"
+id: 0
+mchtId: 10781
+mchtName: "浙江终端公司"
+mchtType: 1
+opId
+: 30838
+provinceId: -1
+regionId: 330000
+username:
+"王逸洁"
